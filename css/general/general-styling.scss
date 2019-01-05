@@ -1,0 +1,136 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,700');
+
+html { 
+    font-family: 'Inter UI', sans-serif;
+    color: #fff;
+    font-size: 14px;
+    min-height: 100%;
+}
+
+body {
+    background-color: #121A2D;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav,
+footer, 
+main {
+    width: 100%;
+    padding: 1rem;
+    @media screen and (min-width: 500px){
+        padding: 2rem;
+    }
+}
+
+main {
+    margin: auto;
+    flex: 1 0 auto;
+}
+
+nav {
+    display: flex;
+    background: radial-gradient(#1a293a 10%, #0F1626 0);
+    background-size: 15px 15px;
+    justify-content: center;
+    a {
+        position: relative;
+        font-size: 1.75em;
+        font-weight: bold;
+        color: #fff;
+        svg {
+            fill: #6C90AA;
+            width: 1.15rem;
+            height: auto;
+            display: inline-block;
+            position: absolute;
+            top: -.1rem;
+            right: -1rem;
+        }
+        &:hover {
+            opacity: .75;
+        }
+    }
+    @media screen and (min-width: 500px){
+        justify-content: flex-start;
+    }
+}
+
+footer {
+    flex-shrink: 0;
+    background-color: #0F1626;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    a {
+        color: rgb(70, 113, 161);
+        transition: color .25s ease;
+        display: flex;
+        margin: .25em .5em .25em 0;
+        svg {
+            margin-left: .5em;
+            fill: rgb(70, 113, 161);
+            transition: fill .25s ease;
+        }
+        &:hover {
+            color: rgb(131, 182, 240);
+            transition: color .25s ease;
+            svg {
+                fill: rgb(131, 182, 240);
+                transition: fill .25s ease;
+                
+            }
+        }
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid rgb(112, 156, 206);
+        }
+    }
+}
+
+.info__container--hidden > .element-info__container {
+    display: none;
+}
+
+.info__container--visible > .home__container {
+    display: none;
+}
+
+
+@media screen and (min-width: 1350px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 2000px) {
+    html {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 2400px) {
+    html {
+        font-size: 24px;
+    }
+}
+
+@media screen and (min-width: 2600px) {
+    html {
+        font-size: 26px;
+    }
+}
+
+@media screen and (min-width: 2800px) {
+    html {
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 3200px) {
+    html {
+        font-size: 30px;
+    }
+}

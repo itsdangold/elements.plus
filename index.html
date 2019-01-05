@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Periodic Table | Elements+</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16"/>
+</head>
+<body>
+    <nav class="element__search">
+        <a href="index.html">
+            Elements             
+            <svg width="468" height="468" viewBox="0 0 468 468" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M468 458C468 463.523 463.523 468 458 468L244 468C238.477 468 234 463.523 234 458L234 361C234 355.477 238.477 351 244 351L341 351C346.523 351 351 346.523 351 341V244C351 238.477 346.523 234 341 234H244C238.477 234 234 229.523 234 224V127C234 121.477 229.523 117 224 117H127C121.477 117 117 121.477 117 127L117 224C117 229.523 112.523 234 107 234H10C4.47715 234 1.95703e-07 229.523 4.37114e-07 224L9.79135e-06 10C1.00328e-05 4.47715 4.47718 1.95703e-07 10 4.37114e-07L458 2.00198e-05C463.523 2.02612e-05 468 4.47719 468 10V458Z"/>
+            </svg>
+        </a>
+    </nav>
+
+    <main class='main-content info__container--hidden'>
+        <!-- Periodic table -->
+        <section class='home__container'>
+            <div class='table__filter'>
+                <ol class="filter__wrapper">
+                    <li class="filter__item" tabindex="1">Alkali</li>
+                    <li class="filter__item" tabindex="2">Alkaline Earth</li>
+                    <li class="filter__item" tabindex="3">Transition</li>
+                    <li class="filter__item" tabindex="4">Post-Transition</li>
+                    <li class="filter__item" tabindex="5">Metalloid</li>
+                    <li class="filter__item" tabindex="6">Non-metal</li>
+                    <li class="filter__item" tabindex="7">Halogen</li>
+                    <li class="filter__item" tabindex="8">Noble</li>
+                    <li class="filter__item" tabindex="9">Lanthanoid</li>
+                    <li class="filter__item" tabindex="10">Actinoid</li>
+                </ol>
+            </div>
+            <section class='periodic-table'>
+                <section class='hover__info'>
+                    <div class="info__container">
+                        <h4 class="info__heading">Current Element</h4>
+                        <h2 class="info--name">H <span>/</span> Hydrogen</h2>
+                    </div>
+                    <div class="info__container">
+                        <h4 class="info__heading">Atomic Mass</h4>
+                        <h2 class="info--mass">1.008</h2>
+                    </div>
+                    <div class="info__container">
+                        <h4 class="info__heading">Phase</h4>
+                        <h2 class="info--phase">Gas</h2>
+                    </div>
+                </section>
+            </section>
+        </section>
+
+        <!-- Element information -->
+        <section class="element-info__container">
+            <div class="info__heading">
+                <div class="heading__nav">
+                    <div class="navigation__container">
+                        <button class='navigation--previous'>
+                            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.91759 1.00977L2.0647 8.86266L9.91759 16.7156" stroke-width="3"/>
+                            </svg>
+                        </button>
+                        <h4 class='navigation--position' data-element-property="atomicNumber">1</h4>
+                        <button class='navigation--next'>
+                            <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.819221 16.7158L8.67212 8.86292L0.819223 1.01003" stroke-width="3"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <h1 class='heading--title' data-element-property="name">Hydrogen</h1>
+                </div>
+
+                <button class='info--close' onclick="toggleContainerVisibility()">
+                    Back to table
+                    <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.24396e-05 1.22199C5.24396e-05 0.54734 0.546964 0.000428783 1.22161 0.000428783H5.90627C6.58092 0.000428783 7.12783 0.547341 7.12783 1.22199V5.90664C7.12783 6.58129 6.58092 7.1282 5.90627 7.1282H1.22161C0.546964 7.1282 5.24396e-05 6.58129 5.24396e-05 5.90664V1.22199Z"/>
+                        <path d="M9.87329 1.22156C9.87329 0.546911 10.4202 0 11.0949 0H15.7795C16.4542 0 17.0011 0.546912 17.0011 1.22156V5.90621C17.0011 6.58086 16.4542 7.12778 15.7795 7.12778H11.0949C10.4202 7.12778 9.87329 6.58086 9.87329 5.90621V1.22156Z"/>
+                        <path d="M19.7994 1.22156C19.7994 0.546911 20.3463 0 21.0209 0H25.7056C26.3802 0 26.9272 0.546912 26.9272 1.22156V5.90621C26.9272 6.58086 26.3802 7.12778 25.7056 7.12778H21.0209C20.3463 7.12778 19.7994 6.58086 19.7994 5.90621V1.22156Z"/>
+                        <path d="M0 11.0949C0 10.4202 0.546912 9.8733 1.22156 9.8733H5.90621C6.58086 9.8733 7.12778 10.4202 7.12778 11.0949V15.7795C7.12778 16.4542 6.58086 17.0011 5.90621 17.0011H1.22156C0.546911 17.0011 0 16.4542 0 15.7795V11.0949Z"/>
+                        <path d="M9.87329 11.0949C9.87329 10.4202 10.4202 9.8733 11.0949 9.8733H15.7795C16.4542 9.8733 17.0011 10.4202 17.0011 11.0949V15.7795C17.0011 16.4542 16.4542 17.0011 15.7795 17.0011H11.0949C10.4202 17.0011 9.87329 16.4542 9.87329 15.7795V11.0949Z"/>
+                        <path d="M19.7994 11.0949C19.7994 10.4202 20.3463 9.8733 21.0209 9.8733H25.7056C26.3802 9.8733 26.9272 10.4202 26.9272 11.0949V15.7795C26.9272 16.4542 26.3802 17.0011 25.7056 17.0011H21.0209C20.3463 17.0011 19.7994 16.4542 19.7994 15.7795V11.0949Z"/>
+                        <path d="M0 20.9682C0 20.2935 0.546912 19.7466 1.22156 19.7466H5.90621C6.58086 19.7466 7.12778 20.2935 7.12778 20.9682V25.6528C7.12778 26.3275 6.58086 26.8744 5.90621 26.8744H1.22156C0.546911 26.8744 0 26.3275 0 25.6528V20.9682Z"/>
+                        <path d="M9.87329 20.9682C9.87329 20.2935 10.4202 19.7466 11.0949 19.7466H15.7795C16.4542 19.7466 17.0011 20.2935 17.0011 20.9682V25.6528C17.0011 26.3275 16.4542 26.8744 15.7795 26.8744H11.0949C10.4202 26.8744 9.87329 26.3275 9.87329 25.6528V20.9682Z"/>
+                        <path d="M19.7994 20.9682C19.7994 20.2935 20.3463 19.7466 21.0209 19.7466H25.7056C26.3802 19.7466 26.9272 20.2935 26.9272 20.9682V25.6528C26.9272 26.3275 26.3802 26.8744 25.7056 26.8744H21.0209C20.3463 26.8744 19.7994 26.3275 19.7994 25.6528V20.9682Z"/>
+                    </svg>                        
+                </button>
+            </div>
+
+            <section class="card__container">
+
+                <div class="info__card data--general">
+                    <h3 class="card--label">General</h3>
+                    <div class="card__data">
+                        <div class="data__element">
+                            <h3 class="element--title">Symbol</h3>
+                            <h2 data-element-property="symbol">H</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Atomic Number</h3>
+                            <h2 data-element-property="atomicNumber">1</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Block</h3>
+                            <h2 data-element-property="block">S-Block</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Group</h3>
+                            <h2 data-element-property="group">1</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Period</h3>
+                            <h2 data-element-property="period">1</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Category</h3>
+                            <h2 data-element-property="category">Nonmetal</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Electron Config.</h3>
+                            <h2 data-element-property="electronConfig">1s1</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Year Discovered</h3>
+                            <h2 data-element-property="yearDiscovered">1766</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info__card data--atomic">
+                    <h3 class="card--label">Atomic Properties</h3>
+                    <div class="card__data">
+                        <div class="data__element">
+                            <h3 class="element--title">Oxidation States</h3>
+                            <h2 data-element-property="oxidationStates">-1, +1</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Electronegativity</h3>
+                            <h2 data-element-property="electronegativity">2.2</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Ionisation Energy</h3>
+                            <h2 data-element-property="ionisationEnergy">1312</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Atomic Radius</h3>
+                            <h2 data-element-property="atomicRadius">0.53</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Covalent Radius</h3>
+                            <h2 data-element-property="covalentRadius">0.37</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Van Der Waals Radius</h3>
+                            <h2 data-element-property="vanDerWaalsRadius">1.2</h2>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info__card data--physical">
+                    <h3 class="card--label">Physical Properties</h3>
+                    <div class="card__data">
+                        <div class="data__element">
+                            <h3 class="element--title">Phase</h3>
+                            <h2 data-element-property="phase">Gas</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Heat of Fusion</h3>
+                            <h2 data-element-property="heatOfFusion">0.117</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Heat of Vaporisation</h3>
+                            <h2 data-element-property="heatOfVaporisation">1312</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Molar Heat Capacity</h3>
+                            <h2 data-element-property="molarHeatCapacity">28.836</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Melting Point</h3>
+                            <h2 data-element-property="meltingPoint">13.99</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Boiling Point</h3>
+                            <h2 data-element-property="boilingPoint">20.271</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Density</h3>
+                            <h2 data-element-property="density">n/a</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Atomic Mass</h3>
+                            <h2 data-element-property="atomicMass">1.008</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="info__card data--other">
+                    <h3 class="card--label">Other Data</h3>
+                    <div class="card__data">
+                        <div class="data__element">
+                            <h3 class="element--title">Crystal Structure</h3>
+                            <h2 data-element-property="crystalStructure">Hexagonal</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Magnetic Ordering</h3>
+                            <h2 data-element-property="magneticOrdering">Diamagnetic</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">CAS Number</h3>
+                            <h2 data-element-property="casNumber">1333-74-0</h2>
+                        </div>
+                        <div class="data__element">
+                            <h3 class="element--title">Bonding Type</h3>
+                            <h2 data-element-property="bondingType">Diatomic</h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <a href="https://github.com/itsdangold/elements.plus" target='__blank'>View Source Code</a>
+        <a href="https://twitter.com/itsdangold" target='__blank'>
+            Made by Dan Gold
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+            </svg>
+        </a>
+    </footer>
+    <script type="text/javascript" src="element-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

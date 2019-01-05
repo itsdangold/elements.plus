@@ -1,0 +1,70 @@
+.table__filter {
+    display: flex;
+    margin-bottom: 1em;
+    .filter__wrapper {
+        display: inline-flex;
+        flex-wrap: wrap;
+        li {
+            list-style-type: none;
+            padding: .75rem;
+            border-radius: 2px;
+            background-color: #2A3D54;
+            margin: .25em;
+            opacity: .85;
+            transition: opacity .25s ease-out, background-color .25s ease-out;
+            cursor: default;
+
+            &::selection {
+                background-color: none;
+            }
+            &:hover, &:focus {
+                background-color: rgb(57, 128, 124);
+                opacity: 1;
+                transition: opacity .25s ease-in, background-color .25s ease-in;
+            }
+            &:nth-child(1):hover,
+            &:nth-child(1):focus{
+                background-color: rgb(64, 72, 180);
+            }
+            &:nth-child(2):hover,
+            &:nth-child(2):focus{
+                background-color: rgb(26, 112, 151);
+            }
+            &:nth-child(3):hover,
+            &:nth-child(3):focus{
+                background-color: rgb(26, 107, 182);
+            }
+            &:nth-child(4):hover,
+            &:nth-child(4):focus{
+                background-color: rgb(221, 157, 53);
+            }
+            &:nth-child(5):hover,
+            &:nth-child(5):focus{
+                background-color: rgb(187, 85, 45);
+            }
+            &:nth-child(6):hover,
+            &:nth-child(6):focus{
+                background-color: rgb(158, 32, 64);
+            }
+            &:nth-child(7):hover,
+            &:nth-child(7):focus{
+                background-color: rgb(106, 52, 151);
+            }
+            &:nth-child(8):hover,
+            &:nth-child(8):focus{
+                background-color: rgb(52, 151, 143);
+            }
+            &:nth-child(9):hover,
+            &:nth-child(9):focus{
+                background-color: rgb(42, 121, 75);
+            }
+            &:nth-child(10):hover,
+            &:nth-child(10):focus{
+                background-color: rgb(90, 80, 68);
+            }
+        }
+    }
+    @media screen and (min-width: 850px) {
+        justify-content: center;
+    }
+}

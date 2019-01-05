@@ -1,0 +1,45 @@
+.hover__info {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 1em;
+    .info__container {
+        margin-bottom: .5em;
+        width: 50%;
+        padding: .5em;
+        h4 {
+            font-family: 'Space Mono', monospace;
+            color: #76adc7;
+            text-transform: uppercase;
+            font-weight: lighter;
+        }
+        h2 {
+            text-transform: capitalize;
+            span {
+                opacity: .25;
+            }
+        }
+        &:first-child {
+            width: 100%;
+        }
+    }
+
+    @media screen and (min-width: 500px){
+        justify-content: space-evenly;
+
+        .info__container {
+            width: auto;
+            &:first-child {
+                width: auto;
+            }
+        }
+        h2 {
+            font-size: 1.75rem;
+        }
+    }
+
+    @media screen and (min-width: 900px){
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+}

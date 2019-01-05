@@ -1,0 +1,179 @@
+.periodic-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: .35rem;
+
+    .hover__info {
+        grid-area: 1 / 1 / auto / -1;
+    }
+
+    .element__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 1px;
+        background-color: rgb(98, 143, 192);
+        color: rgb(255, 255, 255);
+        padding: 1em;
+        transition: opacity .25s ease, box-shadow .25s ease, background-color .25s ease;
+
+        h5 {
+            position: absolute;
+            font-size: 1rem;
+            font-family: 'Space Mono';
+            font-weight: 100;
+            top: .25rem;
+        }
+
+        h3 {
+            position: relative;
+            font-size: 1.75rem;
+            font-weight: 700;
+            padding-top: .75em;
+        }
+        &:not(.filter__item--active){
+            background-color: rgb(33, 46, 66);
+            opacity: .5;
+            h5 {
+                color: rgb(67, 171, 219);
+            }
+        }
+
+        &:hover, &:focus {
+            opacity: 1;
+            background-color: rgb(52, 75, 112);
+            box-shadow: 0 4px 20px 5px rgba(11, 16, 27, 0.5);
+            transition: all .25s ease;
+            z-index: 1000;
+        }
+    }
+
+    [data-element-category = 'alkali'], [data-element-category = 'alkali']:hover,
+    [data-element-category = 'alkali'], [data-element-category = 'alkali']:focus{
+        background-color: rgb(64, 72, 180);
+        h5 {
+            color: rgb(255, 155, 213);
+        }
+    }
+    [data-element-category = 'alkaline earth'], [data-element-category = 'alkaline earth']:hover,
+    [data-element-category = 'alkaline earth'], [data-element-category = 'alkaline earth']:focus{
+        background-color: rgb(26, 112, 151);
+        h5 {
+            color: rgb(0, 255, 157);
+        }
+    }
+    [data-element-category = 'transition'], [data-element-category = 'transition']:hover,
+    [data-element-category = 'transition'], [data-element-category = 'transition']:focus{
+        background-color: rgb(26, 107, 182);
+        h5 {
+            color: rgb(129, 255, 255);
+        }
+    }
+    [data-element-category = 'post-transition'], [data-element-category = 'post-transition']:hover,
+    [data-element-category = 'post-transition'], [data-element-category = 'post-transition']:focus{
+        background-color: rgb(221, 157, 53);
+        h5 {
+            color: rgb(65, 45, 15);
+        }
+    }
+    [data-element-category = 'metalloid'], [data-element-category = 'metalloid']:hover,
+    [data-element-category = 'metalloid'], [data-element-category = 'metalloid']:focus{
+        background-color: rgb(187, 85, 45);
+        h5 {
+            color: rgb(255, 234, 115);
+        }
+    }
+    [data-element-category = 'nonmetal'], [data-element-category = 'nonmetal']:hover,
+    [data-element-category = 'nonmetal'], [data-element-category = 'nonmetal']:focus{
+        background-color: rgb(158, 32, 64);
+        h5 {
+            color: #ffdba1;
+        }
+    }
+    [data-element-category = 'halogen'], [data-element-category = 'halogen']:hover,
+    [data-element-category = 'halogen'], [data-element-category = 'halogen']:focus{
+        background-color: rgb(106, 52, 151);
+        h5 {
+            color: rgb(117, 227, 255);
+        }
+    }
+    [data-element-category = 'noble gas'], [data-element-category = 'noble gas']:hover,
+    [data-element-category = 'noble gas'], [data-element-category = 'noble gas']:focus{
+        background-color: rgb(52, 151, 143);
+        h5 {
+            color: rgb(176, 255, 123);
+        }
+    }
+    [data-element-category = 'lanthanoid'], [data-element-category = 'lanthanoid']:hover,
+    [data-element-category = 'lanthanoid'], [data-element-category = 'lanthanoid']:focus{
+        background-color: rgb(42, 121, 75);
+        h5 {
+            color: rgb(222, 255, 131);
+        }
+    }
+    [data-element-category = 'actinoid'], [data-element-category = 'actinoid']:hover,
+    [data-element-category = 'actinoid'], [data-element-category = 'actinoid']:focus{
+        background-color: rgb(90, 80, 68);
+        h5 {
+            color: rgb(111, 255, 171);
+        }
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .periodic-table {
+        grid-template-columns: repeat(auto-fill, minmax(4.5rem, 1fr));        
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .periodic-table {
+        grid-template-columns: repeat(18, 1fr);
+
+        .hover__info {
+            grid-area: 2 / 3 / 4 / 13;
+        }
+
+        .element__container[data-element-position='2'] {
+            grid-column: -2;
+        }
+        .element__container[data-element-position='5'],
+        .element__container[data-element-position='13']{
+            grid-column: -7;
+        }
+
+        .element__container:nth-child(n+59):nth-last-child(n+48) {
+            grid-row-start: 8;
+        }
+        .element__container:nth-child(n+91):nth-last-child(n+16) {
+            grid-row-start: 9;
+        }
+
+        &::before  {
+            content: '';
+            grid-area: 8 / 1 / span 2 / span 2;
+        }
+        .element__container {
+            h3 {
+                font-size: 1.55rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1550px) {
+    .periodic-table {
+        margin: auto;
+        width: 90%;
+        .element__container {
+            h5 {
+                font-size: 1.15rem;
+            }
+    
+            h3 {
+                font-size: 1.65rem;
+            }
+        }
+    }
+}
