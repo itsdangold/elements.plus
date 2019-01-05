@@ -65,27 +65,27 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     a {
-        color: rgb(70, 113, 161);
+        color: rgb(108, 158, 216);
         transition: color .25s ease;
         display: flex;
         margin: .25em .5em .25em 0;
         svg {
             margin-left: .5em;
-            fill: rgb(70, 113, 161);
+            fill: rgb(108, 158, 216);
             transition: fill .25s ease;
         }
         &:hover {
-            color: rgb(131, 182, 240);
+            color: rgb(157, 198, 245);
             transition: color .25s ease;
             svg {
-                fill: rgb(131, 182, 240);
+                fill: rgb(157, 198, 245);
                 transition: fill .25s ease;
                 
             }
         }
         &:focus {
             outline: none;
-            border-bottom: 2px solid rgb(112, 156, 206);
+            border-bottom: 2px solid rgb(157, 198, 245);
         }
     }
 }

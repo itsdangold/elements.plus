@@ -98,27 +98,27 @@ footer {
   flex-wrap: wrap;
 }
 footer a {
-  color: #4671a1;
+  color: #6c9ed8;
   transition: color 0.25s ease;
   display: flex;
   margin: 0.25em 0.5em 0.25em 0;
 }
 footer a svg {
   margin-left: 0.5em;
-  fill: #4671a1;
+  fill: #6c9ed8;
   transition: fill 0.25s ease;
 }
 footer a:hover {
-  color: #83b6f0;
+  color: #9dc6f5;
   transition: color 0.25s ease;
 }
 footer a:hover svg {
-  fill: #83b6f0;
+  fill: #9dc6f5;
   transition: fill 0.25s ease;
 }
 footer a:focus {
   outline: none;
-  border-bottom: 2px solid #709cce;
+  border-bottom: 2px solid #9dc6f5;
 }
 
 .info__container--hidden > .element-info__container {
@@ -420,7 +420,7 @@ footer a:focus {
   text-transform: capitalize;
 }
 .hover__info .info__container h2 span {
-  opacity: 0.25;
+  opacity: 0.45;
 }
 .hover__info .info__container:first-child {
   width: 100%;
