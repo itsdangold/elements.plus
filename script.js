@@ -103,6 +103,11 @@ function createElementDetails() {
 
         elementDetails[i].innerHTML = elementsData[currentElementPosition-1][`${currentElementProperty}`];
     }
+    var infoContainer = document.querySelector('.main-content');
+    
+    if (infoContainer.classList.contains('info__container--visible')){
+        document.title = `${elementsData[currentElementPosition-1]['name']} | Elements+`;
+    }
 }
 
 function toggleContainerVisibility() {
