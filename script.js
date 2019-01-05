@@ -104,7 +104,7 @@ function createElementDetails() {
         elementDetails[i].innerHTML = elementsData[currentElementPosition-1][`${currentElementProperty}`];
     }
     var infoContainer = document.querySelector('.main-content');
-    
+
     if (infoContainer.classList.contains('info__container--visible')){
         document.title = `${elementsData[currentElementPosition-1]['name']} | Elements+`;
     }
@@ -149,13 +149,13 @@ for (var i = 0; i < filterItems.length; i++){
         toggleCurrentItems(getCurrentItems);
     });
 
-    filterItems[i].addEventListener('mouseenter', function(){
-        toggleCurrentItems(getCurrentItems);
-    });
+    // filterItems[i].addEventListener('mouseenter', function(){
+    //     toggleCurrentItems(getCurrentItems);
+    // });
 
-    filterItems[i].addEventListener('mouseleave', function(){
-        toggleCurrentItems(getCurrentItems);
-    });
+    // filterItems[i].addEventListener('click', function(){
+    //     toggleCurrentItems(getCurrentItems);
+    // });
 }
 
 function toggleCurrentItems(getCurrentItems){

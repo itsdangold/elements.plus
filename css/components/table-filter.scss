@@ -18,12 +18,19 @@
                 background-color: none;
             }
             &:hover, &:focus {
-                background-color: rgb(57, 128, 124);
-                opacity: 1;
                 transition: opacity .25s ease-in, background-color .25s ease-in;
             }
-            &:nth-child(1):hover,
-            &:nth-child(1):focus{
+            &:hover {
+                opacity: .85;
+            }
+            &:focus {
+                opacity: 1;
+                outline: none;
+                z-index: 100;
+                box-shadow: 0 0 20px 5px rgba(11, 16, 27, 0.5);
+            }
+            &:nth-child(1):hover, 
+            &:nth-child(1):focus {
                 background-color: rgb(64, 72, 180);
             }
             &:nth-child(2):hover,

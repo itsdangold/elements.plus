@@ -181,9 +181,16 @@ footer a:focus {
   background-color: none;
 }
 .table__filter .filter__wrapper li:hover, .table__filter .filter__wrapper li:focus {
-  background-color: #39807c;
-  opacity: 1;
   transition: opacity 0.25s ease-in, background-color 0.25s ease-in;
+}
+.table__filter .filter__wrapper li:hover {
+  opacity: 0.85;
+}
+.table__filter .filter__wrapper li:focus {
+  opacity: 1;
+  outline: none;
+  z-index: 100;
+  box-shadow: 0 0 20px 5px rgba(11, 16, 27, 0.5);
 }
 .table__filter .filter__wrapper li:nth-child(1):hover, .table__filter .filter__wrapper li:nth-child(1):focus {
   background-color: #4048b4;
