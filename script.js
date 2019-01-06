@@ -54,7 +54,7 @@ function hoverInfo(currentHover) {
     var hoverMass = document.querySelector('.info--mass');
     var hoverPhase = document.querySelector('.info--phase');
 
-    hoverName.innerHTML = `${elementsData[currentIndex]['symbol']} <span>/</span> ${elementsData[currentIndex]['name']}`;
+    hoverName.innerHTML = `${elementsData[currentIndex]['name']}`;
     hoverMass.innerHTML = `${elementsData[currentIndex]['atomicMass']}`;
     hoverPhase.innerHTML = `${elementsData[currentIndex]['phase']}`;
 }
@@ -152,8 +152,12 @@ for (var i = 0; i < filterItems.length; i++){
     // filterItems[i].addEventListener('mouseenter', function(){
     //     toggleCurrentItems(getCurrentItems);
     // });
+    
+    // filterItems[i].addEventListener('mouseleave', function(){
+    //     toggleCurrentItems(getCurrentItems);
+    // });
 
-    // filterItems[i].addEventListener('click', function(){
+    // filterItems[i].addEventListener('mousedown', function(){
     //     toggleCurrentItems(getCurrentItems);
     // });
 }

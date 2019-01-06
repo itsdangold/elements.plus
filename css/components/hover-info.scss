@@ -1,10 +1,7 @@
 .hover__info {
-    display: flex;
-    flex-wrap: wrap;
-    padding-bottom: 1em;
+    display: none;
     .info__container {
         margin-bottom: .5em;
-        width: 50%;
         padding: .5em;
         h4 {
             font-family: 'Space Mono', monospace;
@@ -18,28 +15,45 @@
                 opacity: .45;
             }
         }
-        &:first-child {
-            width: 100%;
-        }
-    }
 
-    @media screen and (min-width: 500px){
-        justify-content: space-evenly;
-
-        .info__container {
-            width: auto;
-            &:first-child {
-                width: auto;
+        &:nth-child(2){
+            h2 {
+                font-variant-numeric: tabular-nums;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
+    }
+    @media screen and (min-width: 550px){
+        display: grid;
+        grid-template-columns: 40% 40% 5%;
+        padding-bottom: 1em;
+
         h2 {
             font-size: 1.75rem;
         }
     }
 
+    @media screen and (min-width: 750px){
+        grid-template-columns: 35% 35% 10%;
+        h2 {
+            font-size: 2rem;
+        }
+    }
+
     @media screen and (min-width: 900px){
+        grid-template-columns: 30% 30% 10%;
         h2 {
             font-size: 2.5rem;
         }
+    }
+    @media screen and (min-width: 1000px){
+        margin: auto;
+        width: 80%;
+    }
+    @media screen and (min-width: 1200px){
+        grid-template-columns: 40% 40% 10%;
+        width: 90%;
     }
 }

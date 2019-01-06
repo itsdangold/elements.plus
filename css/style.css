@@ -253,6 +253,7 @@ footer a:focus {
   font-family: "Space Mono";
   font-weight: 100;
   top: 0.25rem;
+  font-variant-numeric: tabular-nums;
 }
 .periodic-table .element__container h3 {
   position: relative;
@@ -401,13 +402,10 @@ footer a:focus {
   }
 }
 .hover__info {
-  display: flex;
-  flex-wrap: wrap;
-  padding-bottom: 1em;
+  display: none;
 }
 .hover__info .info__container {
   margin-bottom: 0.5em;
-  width: 50%;
   padding: 0.5em;
 }
 .hover__info .info__container h4 {
@@ -422,26 +420,48 @@ footer a:focus {
 .hover__info .info__container h2 span {
   opacity: 0.45;
 }
-.hover__info .info__container:first-child {
-  width: 100%;
+.hover__info .info__container:nth-child(2) h2 {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 550px) {
   .hover__info {
-    justify-content: space-evenly;
-  }
-  .hover__info .info__container {
-    width: auto;
-  }
-  .hover__info .info__container:first-child {
-    width: auto;
+    display: grid;
+    grid-template-columns: 40% 40% 5%;
+    padding-bottom: 1em;
   }
   .hover__info h2 {
     font-size: 1.75rem;
   }
 }
+@media screen and (min-width: 750px) {
+  .hover__info {
+    grid-template-columns: 35% 35% 10%;
+  }
+  .hover__info h2 {
+    font-size: 2rem;
+  }
+}
 @media screen and (min-width: 900px) {
+  .hover__info {
+    grid-template-columns: 30% 30% 10%;
+  }
   .hover__info h2 {
     font-size: 2.5rem;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .hover__info {
+    margin: auto;
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .hover__info {
+    grid-template-columns: 40% 40% 10%;
+    width: 90%;
   }
 }
 
@@ -489,6 +509,7 @@ footer a:focus {
   width: 80px;
   font-size: 1.5em;
   text-align: center;
+  font-variant-numeric: tabular-nums;
 }
 .element-info__container .info__heading .heading__nav h1 {
   font-size: 2.75rem;
