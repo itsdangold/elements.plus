@@ -2,11 +2,37 @@
 // ########### Generating the periodic table ##############
 // ########################################################
 
-
 // Finds the container that holds all the elements
 var tableContainer = document.querySelector('.periodic-table');
 
 var currentElementPosition = 1;
+var elementName = elementsData[currentElementPosition-1]['name'];
+var state = {post: currentElementPosition, visible: false};
+history.pushState(state, '', '/');
+
+window.addEventListener('popstate', function(e) {
+
+    currentElementPosition = e.state.post;
+    var infoContainer = document.querySelector('.main-content');
+
+    if(e.state.visible == false){
+        
+        infoContainer.classList.add('info__container--hidden');
+        infoContainer.classList.remove('info__container--visible');
+    }
+    else if(e.state.visible == true){
+        infoContainer.classList.remove('info__container--hidden');
+        infoContainer.classList.add('info__container--visible');
+        createElementDetails();
+    };
+    
+});
+
+// if clicked add history
+//
+//
+//
+
 
 // Loops through the all the data in element-data.js
 elementsData.forEach(item => {
@@ -25,6 +51,11 @@ elementsData.forEach(item => {
     element.addEventListener('click', function(){
         currentElementPosition = elementPosition;
         toggleContainerVisibility();
+
+        var elementName = elementsData[currentElementPosition-1]['name'];
+        var state = {post: currentElementPosition, visible: true};
+        history.pushState(state, '', `#${elementName}`);
+
         createElementDetails();
     });
     element.addEventListener('mouseenter', function(){
@@ -60,6 +91,10 @@ function hoverInfo(currentHover) {
 }
 
 document.addEventListener('keydown', function(event) {
+    var elementName = elementsData[currentElementPosition-1]['name'];
+    var state = {post: currentElementPosition, visible: true};
+    history.pushState(state, '', `#${elementName}`);
+
     if (event.keyCode == '37'){
         currentElementPosition -= 1;
         createElementDetails();
@@ -74,16 +109,30 @@ document.addEventListener('keydown', function(event) {
 var previousButton = document.querySelector('.navigation--previous');
 previousButton.addEventListener('click', function(){
     currentElementPosition -= 1;
+
+    var elementName = elementsData[currentElementPosition-1]['name'];
+    var state = {post: currentElementPosition, visible: true};
+    history.pushState(state, '', `#${elementName}`);
+
     createElementDetails();
 });
 
 var nextButton = document.querySelector('.navigation--next');
 nextButton.addEventListener('click', function(){
     currentElementPosition += 1;
+
+    var elementName = elementsData[currentElementPosition-1]['name'];
+    var state = {post: currentElementPosition, visible: true};
+    history.pushState(state, '', `#${elementName}`);
+
     createElementDetails();
 });
 
 function createElementDetails() {
+    // let elementName = elementsData[currentElementPosition-1]['name'];
+    // let state = {post: currentElementPosition};
+    // history.pushState(state, '', `/${elementName}`);
+
     if (currentElementPosition < 1){
         currentElementPosition = elementsData.length;
     } else if (currentElementPosition > elementsData.length){
@@ -117,8 +166,12 @@ function toggleContainerVisibility() {
     infoContainer.classList.toggle('info__container--visible');
     if(infoContainer.classList.contains('info__container--hidden')){
         document.title = 'Periodic Table | Elements+';
+
+        var state = {post: currentElementPosition, visible: false}
+        history.pushState(state, '', '/');
     } else if (infoContainer.classList.contains('info__container--visible')){
         document.title = `${elementsData[currentElementPosition-1]['name']} | Elements+`;
+
     }
 };
 
