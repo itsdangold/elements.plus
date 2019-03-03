@@ -11,10 +11,9 @@ var state = {post: currentElementPosition, visible: false};
 history.pushState(state, '', '/');
 
 window.addEventListener('popstate', function(e) {
-
     currentElementPosition = e.state.post;
     var infoContainer = document.querySelector('.main-content');
-
+    console.log(currentElementPosition);
     if(e.state.visible == false){
         
         infoContainer.classList.add('info__container--hidden');
@@ -27,12 +26,6 @@ window.addEventListener('popstate', function(e) {
     };
     
 });
-
-// if clicked add history
-//
-//
-//
-
 
 // Loops through the all the data in element-data.js
 elementsData.forEach(item => {
@@ -52,11 +45,11 @@ elementsData.forEach(item => {
         currentElementPosition = elementPosition;
         toggleContainerVisibility();
 
+        createElementDetails();
+
         var elementName = elementsData[currentElementPosition-1]['name'];
         var state = {post: currentElementPosition, visible: true};
         history.pushState(state, '', `#${elementName}`);
-
-        createElementDetails();
     });
     element.addEventListener('mouseenter', function(){
         hoverInfo(elementPosition);
@@ -91,9 +84,6 @@ function hoverInfo(currentHover) {
 }
 
 document.addEventListener('keydown', function(event) {
-    var elementName = elementsData[currentElementPosition-1]['name'];
-    var state = {post: currentElementPosition, visible: true};
-    history.pushState(state, '', `#${elementName}`);
 
     if (event.keyCode == '37'){
         currentElementPosition -= 1;
@@ -104,34 +94,35 @@ document.addEventListener('keydown', function(event) {
         createElementDetails();
         event.preventDefault();
     }
+
+    var elementName = elementsData[currentElementPosition-1]['name'];
+    var state = {post: currentElementPosition, visible: true};
+    history.pushState(state, '', `#${elementName}`);
 });
 
 var previousButton = document.querySelector('.navigation--previous');
 previousButton.addEventListener('click', function(){
     currentElementPosition -= 1;
 
+    createElementDetails();
+
     var elementName = elementsData[currentElementPosition-1]['name'];
     var state = {post: currentElementPosition, visible: true};
     history.pushState(state, '', `#${elementName}`);
-
-    createElementDetails();
 });
 
 var nextButton = document.querySelector('.navigation--next');
 nextButton.addEventListener('click', function(){
     currentElementPosition += 1;
 
+    createElementDetails();
+
     var elementName = elementsData[currentElementPosition-1]['name'];
     var state = {post: currentElementPosition, visible: true};
     history.pushState(state, '', `#${elementName}`);
-
-    createElementDetails();
 });
 
 function createElementDetails() {
-    // let elementName = elementsData[currentElementPosition-1]['name'];
-    // let state = {post: currentElementPosition};
-    // history.pushState(state, '', `/${elementName}`);
 
     if (currentElementPosition < 1){
         currentElementPosition = elementsData.length;
@@ -152,18 +143,20 @@ function createElementDetails() {
 
         elementDetails[i].innerHTML = elementsData[currentElementPosition-1][`${currentElementProperty}`];
     }
+
     var infoContainer = document.querySelector('.main-content');
 
     if (infoContainer.classList.contains('info__container--visible')){
         document.title = `${elementsData[currentElementPosition-1]['name']} | Elements+`;
-    }
-}
+    };
+};
 
 function toggleContainerVisibility() {
     window.scrollTo(0, 0);
     var infoContainer = document.querySelector('.main-content');
     infoContainer.classList.toggle('info__container--hidden');
     infoContainer.classList.toggle('info__container--visible');
+
     if(infoContainer.classList.contains('info__container--hidden')){
         document.title = 'Periodic Table | Elements+';
 
@@ -201,18 +194,6 @@ for (var i = 0; i < filterItems.length; i++){
     filterItems[i].addEventListener('blur', function(){
         toggleCurrentItems(getCurrentItems);
     });
-
-    // filterItems[i].addEventListener('mouseenter', function(){
-    //     toggleCurrentItems(getCurrentItems);
-    // });
-    
-    // filterItems[i].addEventListener('mouseleave', function(){
-    //     toggleCurrentItems(getCurrentItems);
-    // });
-
-    // filterItems[i].addEventListener('mousedown', function(){
-    //     toggleCurrentItems(getCurrentItems);
-    // });
 }
 
 function toggleCurrentItems(getCurrentItems){
